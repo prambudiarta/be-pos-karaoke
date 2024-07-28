@@ -1,9 +1,7 @@
-import 'module-alias/register';
-import app from "./app";
+import app from './app';
 
-const port = 3000;
-app.listen(port, () => {
-    console.log(`=================================`);
-    console.log(`🚀 App listening on the port ${port}`);
-    console.log(`=================================`);
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });

@@ -1,15 +1,10 @@
-import express from "express";
-import deviceRoutes from './routes/deviceRoutes';
+import express from 'express';
+import bodyParser from 'body-parser';
+import routes from './routes';
 
 const app = express();
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
-app.use('/api', deviceRoutes);
-
-app.get('/', (req, res) => {
-    res.send('Welcome to Karaoke POS');
-  });
-
+app.use(bodyParser.json());
+app.use(routes);
 
 export default app;
